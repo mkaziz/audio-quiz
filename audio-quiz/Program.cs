@@ -13,7 +13,8 @@ if (!app.Environment.IsDevelopment())
     app.UseHsts();
 }
 
-app.UseHttpsRedirection();
+// https://github.com/orgs/community/discussions/7116#discussioncomment-7527560
+// app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
