@@ -7,4 +7,8 @@
     <RootNamespace>audio_quiz</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SQLite" Version="8.0.6" />
+  </ItemGroup>
+
 </Project>
