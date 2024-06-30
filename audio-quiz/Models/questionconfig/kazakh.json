@@ -1,0 +1,97 @@
+{
+  "audioUrl": "audio/kazakh.mp3",
+  "questions": [
+    {
+      "questionId": 1,
+      "questionText": "What year did Kazakhstan gain independence from the Soviet Union?",
+      "answers": [
+        {
+          "answerId": 1,
+          "answerText": "1989"
+        },
+        {
+          "answerId": 2,
+          "answerText": "1991"
+        },
+        {
+          "answerId": 3,
+          "answerText": "1993"
+        },
+        {
+          "answerId": 4,
+          "answerText": "1995"
+        }
+      ],
+      "correctAnswerId": 2
+    },
+    {
+      "questionId": 2,
+      "questionText": "Which city is the capital of Kazakhstan?",
+      "answers": [
+        {
+          "answerId": 1,
+          "answerText": "Almaty"
+        },
+        {
+          "answerId": 2,
+          "answerText": "Astana"
+        },
+        {
+          "answerId": 3,
+          "answerText": "Shymkent"
+        },
+        {
+          "answerId": 4,
+          "answerText": "Karaganda"
+        }
+      ],
+      "correctAnswerId": 2
+    },
+    {
+      "questionId": 3,
+      "questionText": "Kazakhstan is known for its production of which natural resources?",
+      "answers": [
+        {
+          "answerId": 1,
+          "answerText": "Diamonds"
+        },
+        {
+          "answerId": 2,
+          "answerText": "Gold"
+        },
+        {
+          "answerId": 3,
+          "answerText": "Oil and gas"
+        },
+        {
+          "answerId": 4,
+          "answerText": "Uranium"
+        }
+      ],
+      "correctAnswerId": 3
+    },
+    {
+      "questionId": 4,
+      "questionText": "Which facility in Kazakhstan is famous for space launches?",
+      "answers": [
+        {
+          "answerId": 1,
+          "answerText": "Soyuz Space Center"
+        },
+        {
+          "answerId": 2,
+          "answerText": "Vostochny Cosmodrome"
+        },
+        {
+          "answerId": 3,
+          "answerText": "Plesetsk Cosmodrome"
+        },
+        {
+          "answerId": 4,
+          "answerText": "Baikonur Cosmodrome"
+        }
+      ],
+      "correctAnswerId": 4
+    }
+  ]
+}

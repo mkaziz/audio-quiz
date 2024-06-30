@@ -1,8 +1,110 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Audio Quiz";
 }
+
+@model audio_quiz.Models.DbModels.Quiz
 
 <div class="text-center">
     <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <p>Let's take an Audio Quiz'</p>
+
+    <h2>Audio</h2>
+    
+    <audio controls>
+        <source src="audio/kazakh.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <h2>Quiz</h2>
+
+    <form id="quizForm" onsubmit="return validateAnswers()">
+        <@for (int i = 0; i < Model.Questions.Count; i++)
+        {
+                <div class="question">
+                    <p>@Model.Questions[i].QuestionText</p>
+                    <div class="options">
+                    @for (int j = 0; j < Model.Questions[i].Answers.Count; j++)
+                    {
+                                <label>
+                            @Html.RadioButton($"answers[{i}]", Model.Questions[i].Answers[j].AnswerId, false)
+                            @Model.Questions[i].Answers[j].AnswerText
+                                </label>
+
+                        <br />
+                    }
+                    </div>
+                </div>
+        }
+        <button type="submit">Submit</button>
+    }
+
+        <input type="submit" value="Submit">
+    </form>
+
+    <div id="result" class="result" style="display: none;"></div>
+
+    <script>
+        function validateAnswers() {
+            var correctAnswers = ["B", "B", "C", "D"]; // Correct answers array
+            var form = document.getElementById("quizForm");
+            var userAnswers = {
+                q1: getSelectedAnswer(form.elements['q1']),
+                q2: getSelectedAnswer(form.elements['q2']),
+                q3: getSelectedAnswer(form.elements['q3']),
+                q4: getSelectedAnswer(form.elements['q4'])
+            };
+
+            var score = 0;
+            var resultHTML = "<h3>Quiz Results</h3><ul>";
+
+            // Check answers
+            if (userAnswers.q1 === correctAnswers[0]) {
+                score++;
+                resultHTML += "<li>Question 1: Correct</li>";
+            } else {
+                resultHTML += "<li>Question 1: Incorrect</li>";
+            }
+
+            if (userAnswers.q2 === correctAnswers[1]) {
+                score++;
+                resultHTML += "<li>Question 2: Correct</li>";
+            } else {
+                resultHTML += "<li>Question 2: Incorrect</li>";
+            }
+
+            if (userAnswers.q3 === correctAnswers[2]) {
+                score++;
+                resultHTML += "<li>Question 3: Correct</li>";
+            } else {
+                resultHTML += "<li>Question 3: Incorrect</li>";
+            }
+
+            if (userAnswers.q4 === correctAnswers[3]) {
+                score++;
+                resultHTML += "<li>Question 4: Correct</li>";
+            } else {
+                resultHTML += "<li>Question 4: Incorrect</li>";
+            }
+
+            resultHTML += "</ul><p>Total Score: " + score + " out of 4</p>";
+
+            var resultContainer = document.getElementById("result");
+            resultContainer.innerHTML = resultHTML;
+            resultContainer.style.display = "block";
+
+            // Prevent default form submission
+            return false;
+        }
+
+        function getSelectedAnswer(radioButtons) {
+            for (var i = 0; i < radioButtons.length; i++) {
+                if (radioButtons[i].checked) {
+                    return radioButtons[i].value;
+                }
+            }
+            return null; // No selection
+        }
+    </script>
+
+
 </div>

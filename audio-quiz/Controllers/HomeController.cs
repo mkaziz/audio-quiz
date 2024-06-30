@@ -1,6 +1,7 @@
 using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using audio_quiz.Models;
+using audio_quiz.Models.DbModels;
 
 namespace audio_quiz.Controllers;
 
@@ -15,7 +16,8 @@ public class HomeController : Controller
 
     public IActionResult Index()
     {
-        return View();
+        Quiz quiz = Quiz.FromFile("Models/questionconfig/kazakh.json");
+        return View(quiz);
     }
 
     public IActionResult Privacy()

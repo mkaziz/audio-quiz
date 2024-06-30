@@ -7,5 +7,4 @@ public class AppDbContext : DbContext
     }
 
     // Define DbSet properties for your models
-    public DbSet<Quiz> MyQuizzes { get; set; }
 }
