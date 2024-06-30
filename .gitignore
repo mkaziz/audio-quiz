@@ -1,2 +1,4 @@
 audio-quiz/bin
 audio-quiz/obj
+/.vs/audio-quiz
+/audio-quiz/audio-quiz.csproj.user
